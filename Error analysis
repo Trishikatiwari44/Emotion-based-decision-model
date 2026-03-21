@@ -1,0 +1,181 @@
+#  Error Analysis
+
+##  Overview
+
+This section analyzes failure cases of the model to understand its limitations and improve robustness.
+
+The dataset contains noisy, short, and sometimes contradictory inputs, making this task inherently challenging.
+
+---
+
+##  Failure Case 1: Very Short Text
+
+**Input:
+"ok"
+
+**Issue:
+- No emotional signal in text
+- Model relies only on metadata
+
+**Result:**
+- Often predicts neutral or incorrect state
+
+**Improvement:**
+- Add minimum text length check
+- Ask user for more input
+
+---
+
+## 🔍 Failure Case 2: Ambiguous Emotion
+
+**Input:
+"I feel weird today"
+
+**Issue:
+- Could mean anxious, sad, or confused
+- No clear emotional keywords
+
+**Result:
+- Model prediction inconsistent
+
+**Improvement:**
+- Add sentiment analysis
+- Use contextual embeddings
+
+---
+
+## 🔍 Failure Case 3: Conflicting Signals
+
+**Input:
+Journal: "I feel happy"
+Stress Level: 5
+
+**Issue:
+- Text and metadata contradict
+
+**Result:
+- Model confused between signals
+
+**Improvement:
+- Add feature weighting
+- Prioritize reliable signals
+
+---
+
+##  Failure Case 4: Noisy Labels
+
+**Issue:
+- Same type of text mapped to different intensity values
+
+**Example:
+"I feel okay" → intensity 2 or 3
+
+**Result:
+- Regression becomes unstable
+
+**Improvement:
+- Convert intensity to categories (low/medium/high)
+
+---
+
+## 🔍 Failure Case 5: Missing Values
+
+**Issue:
+- Some inputs lack sleep, stress, or mood
+
+**Result:
+- Reduced prediction accuracy
+
+**Improvement:
+- Better imputation
+- Ask user for missing inputs
+
+---
+
+## 🔍 Failure Case 6: Over-reliance on Metadata
+
+**Issue:
+- Model relies heavily on stress/energy
+
+**Result:
+- Ignores subtle emotional cues in text
+
+**Improvement:
+- Improve text representation
+- Use embeddings (BERT, etc.)
+
+---
+
+## 🔍 Failure Case 7: Rare Categories
+
+**Issue:
+- Some ambience types appear rarely
+
+**Result:
+- Poor generalization
+
+**Improvement:
+- Group rare categories
+- Use frequency encoding
+
+---
+
+## 🔍 Failure Case 8: Neutral Bias
+
+**Issue:
+- Model tends to predict "neutral" frequently
+
+**Result:
+- Reduced sensitivity
+
+**Improvement:
+- Balance dataset
+- Use class weights
+
+---
+
+## 🔍 Failure Case 9: Intensity Prediction Error
+
+**Issue:
+- RMSE ≈ 1.4–1.5
+
+**Reason:
+- Subjective labeling
+- No clear boundary between intensity levels
+
+**Improvement:
+- Convert to classification
+- Smooth labels
+
+---
+
+## 🔍 Failure Case 10: Time Context Ignored
+
+**Issue:
+- Time of day not strongly used
+
+**Result:
+- Misses patterns like night fatigue
+
+**Improvement:
+- Feature interaction engineering
+
+---
+
+## 🧠 Key Insights
+
+- Data quality is the main bottleneck, not model complexity  
+- Emotional intensity is subjective and noisy  
+- Metadata provides stronger signal than text  
+- Combining both gives best results  
+
+---
+
+## 🚀 Future Improvements
+
+- Use deep learning (BERT)
+- Add sentiment features
+- Personalize per user
+- Add conversational feedback loop
+
+---
