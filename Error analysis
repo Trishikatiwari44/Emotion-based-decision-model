@@ -26,7 +26,7 @@ The dataset contains noisy, short, and sometimes contradictory inputs, making th
 
 ---
 
-## 🔍 Failure Case 2: Ambiguous Emotion
+##  Failure Case 2: Ambiguous Emotion
 
 **Input:
 "I feel weird today"
@@ -44,7 +44,7 @@ The dataset contains noisy, short, and sometimes contradictory inputs, making th
 
 ---
 
-## 🔍 Failure Case 3: Conflicting Signals
+##  Failure Case 3: Conflicting Signals
 
 **Input:
 Journal: "I feel happy"
@@ -78,7 +78,7 @@ Stress Level: 5
 
 ---
 
-## 🔍 Failure Case 5: Missing Values
+##  Failure Case 5: Missing Values
 
 **Issue:
 - Some inputs lack sleep, stress, or mood
@@ -92,7 +92,7 @@ Stress Level: 5
 
 ---
 
-## 🔍 Failure Case 6: Over-reliance on Metadata
+##  Failure Case 6: Over-reliance on Metadata
 
 **Issue:
 - Model relies heavily on stress/energy
@@ -106,7 +106,7 @@ Stress Level: 5
 
 ---
 
-## 🔍 Failure Case 7: Rare Categories
+##  Failure Case 7: Rare Categories
 
 **Issue:
 - Some ambience types appear rarely
@@ -120,7 +120,7 @@ Stress Level: 5
 
 ---
 
-## 🔍 Failure Case 8: Neutral Bias
+##  Failure Case 8: Neutral Bias
 
 **Issue:
 - Model tends to predict "neutral" frequently
@@ -147,9 +147,9 @@ Stress Level: 5
 - Convert to classification
 - Smooth labels
 
----
 
-## 🔍 Failure Case 10: Time Context Ignored
+
+##  Failure Case 10: Time Context Ignored
 
 **Issue:
 - Time of day not strongly used
@@ -160,22 +160,22 @@ Stress Level: 5
 **Improvement:
 - Feature interaction engineering
 
----
 
-## 🧠 Key Insights
+
+##  Key Insights
 
 - Data quality is the main bottleneck, not model complexity  
 - Emotional intensity is subjective and noisy  
 - Metadata provides stronger signal than text  
 - Combining both gives best results  
 
----
 
-## 🚀 Future Improvements
+
+##  Future Improvements
 
 - Use deep learning (BERT)
 - Add sentiment features
 - Personalize per user
 - Add conversational feedback loop
 
----
+
